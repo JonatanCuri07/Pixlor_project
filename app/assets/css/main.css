@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/nunito-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700 1000;
+  font-display: swap;
+  src: url('../fonts/nunito-black.ttf') format('truetype');
+}
+
+@theme {
+  --font-sans: 'Nunito', 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+}
+
+:root {
+  --ink: #101b51;
+  --cream: #fff0dc;
+  --purple: #7900ff;
+  --wood: #663323;
+  --panel-shadow: 0 8px 0 #41201c, 0 15px 24px #10134566;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, a { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; }
+button, input { font: inherit; }
+a { text-decoration: none; }
+:focus-visible { outline: 3px solid #19e8ff; outline-offset: 4px; }
+.app-icon { width: 1.5rem; height: 1.5rem; }
+.app-background {
+  background-color: #117dde;
+  background-image: linear-gradient(#068fff08, #09174612), url('../images/backgrounds/magic-valley.webp');
+  background-position: center, center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: max(16px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(52px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+}
+.app-shell { max-width: 880px; }
+.auth-screen { max-width: 540px; }
+.pixlor-logo { width: 82%; height: auto; filter: drop-shadow(0 5px 3px #18124444); }
+.character-hero { height: auto; position: relative; z-index: 2; margin-top: 5px; margin-bottom: -14px; }
+.magic-panel {
+  border: 9px solid var(--wood);
+  border-radius: 35px;
+  background: radial-gradient(ellipse at 50% 20%, #fff9ef, var(--cream) 55%, #f7d3b5);
+  box-shadow: var(--panel-shadow), inset 0 0 0 3px #edb88e, inset 0 0 25px #b45b2c38;
+}
+.magic-panel::before, .magic-panel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  width: 4px;
+  height: 28%;
+  top: 23%;
+  border-radius: 6px;
+  background: #f5bdff;
+  box-shadow: 0 0 5px 2px #b516ff, 0 0 13px 4px #8d00ff;
+}
+.magic-panel::before { left: -7px; }
+.magic-panel::after { right: -7px; }
+.panel-rune {
+  position: absolute;
+  top: -10px;
+  left: 34%;
+  width: 32%;
+  height: 6px;
+  background: #fff0ff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 3px #d55dff, 0 0 16px 7px #8c00ef;
+}
+.leaf-cluster { position: absolute; width: 28px; height: 48px; pointer-events: none; z-index: 3; }
+.leaf-cluster::before, .leaf-cluster::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 35px;
+  border-radius: 2px 90% 4px 90%;
+  background: linear-gradient(125deg, #d0ec51, #54a51d 45%, #1e5c0c 80%);
+  box-shadow: inset 2px 0 2px #c1dd4380, 1px 3px 3px #14380e66;
+}
+.leaf-cluster::before { transform: rotate(-30deg); }
+.leaf-cluster::after { transform: rotate(60deg); top: 17px; left: 5px; }
+.leaf-top { top: 2px; left: -16px; transform: rotate(-25deg); }
+.leaf-bottom { bottom: -9px; right: -12px; transform: rotate(150deg); }
+.auth-panel { padding: 31px 19px 25px; }
+.form-field {
+  min-height: 49px;
+  padding: 8px 13px;
+  color: #30364a;
+  border: 1px solid #e7ddd8;
+  border-radius: 21px;
+  background: linear-gradient(white, #fbfbff);
+  box-shadow: 0 2px 2px #8a68561c;
+}
+.form-field:focus-within { outline: 2px solid #a62bff; box-shadow: 0 0 10px #a62bff38; }
+.form-field input { width: 100%; font-size: 14px; }
+.form-field input::placeholder { color: #9599a9; opacity: 1; }
+.password-toggle { padding: 3px; border-radius: 6px; }
+.signup-prompt { font-size: 13px; margin: 5px 0; }
+.signup-prompt a { margin-left: 4px; }
+.magic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 51px;
+  padding: 10px 16px;
+  position: relative;
+  border: 2px solid #e9baff;
+  border-radius: 19px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 0 2px 1px #31106940;
+  box-shadow: inset 0 3px 3px #ffffff70, inset 0 -4px 2px #33008880, 0 4px 0 #4e148b, 0 6px 13px #65249755;
+  background: linear-gradient(170deg, #b953ff 0%, #900cff 30%, #6500ed 80%);
+  transition: filter 150ms, transform 150ms;
+}
+.magic-button::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  width: 8px;
+  height: 13px;
+  border-radius: 100%;
+  background: #ffffff80;
+  transform: rotate(38deg);
+}
+.magic-button:hover { filter: brightness(1.09); transform: translateY(-1px); }
+.magic-button:active { transform: translateY(2px); }
+.button-orange { background: linear-gradient(170deg, #ffe773, #ffba0c 35%, #ff8b00); border-color: #ffeda1; box-shadow: inset 0 3px 3px #ffffff80, inset 0 -4px 2px #a8430080, 0 4px 0 #a64511, 0 6px 13px #71391755; }
+.button-red { background: linear-gradient(170deg, #ff6565, #ff252d 40%, #e80019); border-color: #ff9691; box-shadow: inset 0 3px 3px #ffffff80, inset 0 -4px 2px #91000c80, 0 4px 0 #a00b17, 0 6px 13px #77342355; }
+.button-green { background: linear-gradient(170deg, #76f458, #16da0a 40%, #00bd14); border-color: #b4ff77; box-shadow: inset 0 3px 3px #ffffff80, inset 0 -4px 2px #087a1280, 0 4px 0 #157c18, 0 6px 13px #23792355; }
+.divider { font-size: 12px; margin: 5px 16px 0; color: #424658; }
+.divider span { height: 1px; background: #d1bfb5; }
+.social-button { min-height: 48px; padding: 8px 10px; background: white; border: 1px solid #ece2dc; border-radius: 24px; font-weight: 900; font-size: 14px; color: #2b3040; box-shadow: 0 2px 2px #8a68561c; }
+.social-button .app-icon { width: 29px; height: 29px; }
+.social-button:hover { background: #f5f0ff; }
+.playful-heading { font-size: clamp(27px, 7.4vw, 44px); font-weight: 1000; line-height: 1.1; letter-spacing: -1px; }
+.register-social .social-button { gap: 5px; font-size: 9px; padding: 7px; min-height: 42px; }
+.register-social .app-icon { width: 21px; height: 21px; }
+.preview-link { display: flex; width: fit-content; align-items: center; justify-content: center; gap: 7px; margin: 24px auto 0; padding: 8px 15px; border: 1px solid #d5b4ff70; border-radius: 20px; color: white; background: #102259db; font-size: 12px; font-weight: 800; box-shadow: 0 2px 12px #39195750; }
+.preview-link .app-icon { width: 17px; height: 17px; }
+.menu-panel { padding: 36px 23px 34px; gap: 26px; }
+.menu-button { min-height: 77px; font-size: clamp(18px, 4.8vw, 27px); border-radius: 27px; }
+.menu-button .button-icon { width: 35px; height: 35px; }
+.menu-button > span { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.menu-button > span > span { flex: 1; }
+.menu-button.logout-button { margin-top: 15px; }
+.menu-button.logout-button > span { display: block; }
+.upload-screen { max-width: 650px; }
+.top-bar { padding-top: 6px; }
+.top-bar .pixlor-logo { width: 100%; max-width: 450px; margin-top: -7px; }
+.nav-circle { width: 43px; height: 43px; border-radius: 50%; color: white; background: linear-gradient(140deg, #183c75, #10194b); box-shadow: inset 0 1px 1px #849ce570; }
+.nav-circle .app-icon { width: 27px; height: 27px; }
+.coin-counter { font-size: 19px; font-weight: 900; background: #112452ef; color: white; border-radius: 30px; padding: 6px 10px 6px 6px; }
+.coin-art { width: 31px; height: 31px; filter: drop-shadow(0 1px 1px #964b0050); }
+.coin-compact { color: var(--ink); padding: 0; background: transparent; font-size: 20px; }
+.coin-compact .coin-art { width: 29px; height: 29px; }
+.upload-title { margin-top: 15px; font-weight: 1000; font-size: clamp(42px, 11.5vw, 76px); letter-spacing: -2px; line-height: .98; }
+.upload-title span, .upload-title strong { display: block; paint-order: stroke fill; -webkit-text-stroke: 9px #310576; filter: drop-shadow(0 4px 0 #190755); }
+.upload-title span { color: #fff8ff; }
+.upload-title strong { color: #ffda42; }
+.upload-subtitle { margin-top: 19px; font-size: 16px; line-height: 1.3; }
+.upload-screen .character-hero { margin-top: 4px; }
+.upload-board { border: 7px solid var(--wood); border-radius: 28px; background: repeating-linear-gradient(0deg, #52271e 0, #814735 20px, #48251d 22px, #804536 45px); box-shadow: var(--panel-shadow); }
+.upload-dropzone { min-height: 200px; padding: 25px 10px; background: radial-gradient(ellipse at 75% 20%, #087ea287, transparent), linear-gradient(120deg, #42276bfa, #13205ef5); border: 3px dashed #e3baff; border-radius: 24px; color: white; box-shadow: inset 0 0 13px #9d47ff, 0 0 10px #93ddff; }
+.upload-dropzone strong { font-size: clamp(17px, 4.5vw, 26px); }
+.upload-cloud.app-icon { width: 78px; height: 78px; stroke-width: 1.5; filter: drop-shadow(-3px 0 4px #a400ff) drop-shadow(3px 0 3px #1de3ff); }
+.upload-options { padding: 17px 23px 12px; }
+.upload-option { aspect-ratio: 1.12; padding: 10px; min-height: 0; border-radius: 21px; }
+.upload-option .app-icon { width: 37px; height: 37px; margin: auto; }
+.upload-options span { font-size: 15px; text-shadow: 0 2px 2px #33172e; }
+.upload-submit { border-radius: 40px; box-shadow: inset 0 3px 3px #ffffff70, 0 0 4px 2px #f4c4ff, 0 0 16px 5px #9c00ff; }
+.upload-note { font-size: 11px; text-shadow: 0 1px 4px #091843; }
+.upload-note .app-icon { width: 16px; height: 16px; }
+.store-screen { max-width: 800px; }
+.store-screen > .character-hero { width: 88%; margin-top: 6px; margin-bottom: -7px; }
+.wood-banner { margin: 0 auto; width: 90%; min-height: 85px; padding: 16px 12px; border: 5px solid #512718; border-radius: 24px; background: repeating-linear-gradient(4deg, #70402d 0px, #8c5136 23px, #4d281c 25px, #8e5134 48px); box-shadow: 0 5px 0 #391c13, inset 0 2px 3px #d99255; }
+.wood-banner h1 { font-size: clamp(18px, 5.3vw, 35px); line-height: 1.07; text-shadow: 0 3px 1px #321608; letter-spacing: -.4px; }
+.store-cart { width: 58px; height: 58px; border: 2px solid #ffc144; border-radius: 50%; color: #ffe68f; background: #4c230bc9; box-shadow: 0 0 12px #ff9f06, inset 0 0 10px #ffb8007a; }
+.store-cart .app-icon { width: 36px; height: 36px; }
+.store-stripe { height: 33px; margin: 19px -2px 13px; border-radius: 15px; background: linear-gradient(#443897, #152757); border: 1px solid #7560ec; box-shadow: 0 8px 20px #3546f97a; }
+.product-card { padding: 5px 5px 10px; border: 2px solid #fff; border-radius: 22px; background: linear-gradient(125deg, white, #f1f2ff); box-shadow: 0 0 9px #c7c4ffad, 0 8px 18px #0d286444; transition: transform 150ms; }
+.product-card:hover { transform: translateY(-3px); }
+.product-card img { border-radius: 16px; }
+.product-name { font-size: 14px; line-height: 1.14; margin-inline: 3px; }
+.product-card .coin-counter { margin-left: 3px; }
+.whatsapp-help { padding: 12px; border: 1px solid white; border-radius: 25px; background: linear-gradient(120deg, white, #f1f1ff); color: var(--ink); box-shadow: 0 6px 16px #12335840; }
+.whatsapp-tile { width: 52px; height: 52px; border-radius: 17px; color: white; background: linear-gradient(145deg, #21db2d, #00b826); }
+.whatsapp-tile .app-icon { width: 40px; height: 40px; }
+.whatsapp-help strong { font-size: 17px; line-height: 1.2; }
+.whatsapp-help span span { font-size: 12px; line-height: 1.3; }
+.magic-dialog { width: min(650px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); margin: auto; padding: 35px 9px 20px; overflow-y: auto; overflow-x: clip; border: 0; background: transparent; color: var(--ink); }
+.magic-dialog::backdrop { background: #050e38a6; }
+.modal-panel { padding: 43px 17px 24px; }
+.modal-star { position: absolute; width: 75px; height: 58px; top: -32px; left: calc(50% - 37.5px); border-radius: 25px; background: linear-gradient(#cb70ff, #6100dd); border: 3px solid #dd95ff; box-shadow: inset 0 3px 3px #ffffff60, 0 0 10px #a325ff, 0 4px 0 #451b7b; }
+.modal-star .app-icon { width: 50px; height: 50px; fill: #ffe342; stroke: #fff58b; stroke-width: 1.5; filter: drop-shadow(0 2px 1px #ca6905); }
+.confirmation-title { font-size: clamp(20px, 5.5vw, 31px); line-height: 1.25; }
+.confirmation-actions .magic-button { min-height: 77px; font-size: clamp(17px, 4.6vw, 25px); border-radius: 26px; padding-inline: 8px; }
+.success-character { position: absolute; width: 43%; height: auto; bottom: 12px; left: -17px; pointer-events: none; }
+.success-copy { z-index: 1; width: 69%; margin-left: auto; }
+.success-copy > p { font-size: 12px; }
+.success-copy > p.font-black { font-size: 14px; }
+.success-copy .magic-button { font-size: 16px; min-height: 62px; padding-inline: 8px; gap: 5px; }
+.success-copy .button-icon { width: 29px; height: 29px; }
+.success-copy .magic-button > .app-icon:last-child { width: 18px; height: 18px; }
+.secondary-button { min-height: 43px; padding: 8px; border: 2px solid #858abb; border-radius: 18px; background: linear-gradient(white, #e9edf8); font-weight: 900; font-size: 14px; }
+.skip-link { position: fixed; top: -100px; left: 12px; z-index: 20; background: white; padding: 10px; border-radius: 10px; }
+.skip-link:focus { top: 12px; }
+
+@media (min-width: 410px) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .product-name { font-size: 12px; }
+  .product-card { border-radius: 18px; }
+  .coin-compact { font-size: 18px; gap: 5px; }
+  .coin-compact .coin-art { width: 25px; height: 25px; }
+  .register-social .social-button { font-size: 11px; }
+}
+
+@media (min-width: 640px) {
+  .app-background { padding-top: 28px; padding-bottom: 70px; }
+  .auth-panel { padding: 40px 36px 33px; }
+  .form-field { min-height: 59px; border-radius: 26px; padding-inline: 19px; }
+  .form-field input { font-size: 17px; }
+  .form-field .app-icon { width: 29px; height: 29px; }
+  .signup-prompt { font-size: 17px; margin-block: 12px; }
+  .magic-button { min-height: 60px; font-size: 22px; }
+  .social-button { min-height: 58px; font-size: 18px; }
+  .register-social .social-button { font-size: 13px; }
+  .menu-panel { padding: 43px 35px; gap: 35px; }
+  .menu-button { min-height: 92px; font-size: 27px; }
+  .menu-button .button-icon { width: 44px; height: 44px; }
+  .top-bar { gap: 15px; }
+  .nav-circle { width: 62px; height: 62px; }
+  .nav-circle .app-icon { width: 36px; height: 36px; }
+  .coin-counter { font-size: 28px; padding: 8px 18px 8px 8px; }
+  .coin-art { width: 42px; height: 42px; }
+  .upload-title { margin-top: 20px; font-size: 80px; }
+  .upload-subtitle { font-size: 22px; margin-top: 26px; }
+  .upload-dropzone { min-height: 280px; }
+  .upload-cloud.app-icon { width: 105px; height: 105px; }
+  .upload-dropzone span { font-size: 20px; }
+  .upload-options { padding: 22px 65px 18px; gap: 32px; }
+  .upload-option .app-icon { width: 48px; height: 48px; }
+  .upload-options span { font-size: 20px; }
+  .upload-note { font-size: 16px; }
+  .wood-banner { min-height: 120px; gap: 25px; border-width: 8px; }
+  .wood-banner h1 { font-size: 38px; }
+  .store-cart { width: 83px; height: 83px; }
+  .store-cart .app-icon { width: 51px; height: 51px; }
+  .store-stripe { height: 52px; margin-block: 25px 20px; }
+  .product-grid { gap: 15px; }
+  .product-card { padding: 7px 7px 15px; border-radius: 26px; }
+  .product-card img { border-radius: 19px; }
+  .product-name { font-size: 19px; margin-inline: 7px; }
+  .product-card .coin-counter { margin-left: 6px; padding: 0; font-size: 26px; }
+  .coin-compact .coin-art { width: 38px; height: 38px; }
+  .whatsapp-help { padding: 16px; gap: 20px; }
+  .whatsapp-tile { width: 74px; height: 74px; border-radius: 24px; }
+  .whatsapp-tile .app-icon { width: 56px; height: 56px; }
+  .whatsapp-help strong { font-size: 24px; }
+  .whatsapp-help span span { font-size: 20px; }
+  .modal-panel { padding: 50px 30px 30px; }
+  .success-character { width: 43%; bottom: -5px; left: -29px; }
+  .success-copy { width: 67%; margin-left: auto; }
+  .success-copy > p { font-size: 17px; }
+  .success-copy > p.font-black { font-size: 20px; }
+  .success-copy .magic-button { font-size: 21px; }
+  .success-copy .button-icon { width: 40px; height: 40px; }
+}
+
+@media (max-width: 359px) {
+  .auth-panel { padding-inline: 13px; }
+  .menu-panel { padding-inline: 16px; }
+  .top-bar { gap: 4px; }
+  .top-bar .coin-counter { padding-right: 7px; font-size: 16px; }
+  .top-bar .coin-art { width: 26px; height: 26px; }
+  .nav-circle { width: 37px; height: 37px; }
+  .upload-options { padding-inline: 16px; gap: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none; scroll-behavior: auto; }
+}
