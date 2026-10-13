@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { Product } from '~/data/products'
 defineProps<{ product: Product }>()
+const emit = defineEmits<{ select: [product: Product] }>()
 </script>
 
 <template>
-  <NuxtLink to="/store/redeem-confirm" class="product-card flex min-w-0 flex-col" :aria-label="`Ver confirmación de canje: ${product.name}, ${product.price} coins`">
-    <img :src="product.image" :alt="product.name" width="400" height="400" class="aspect-square w-full object-cover" loading="lazy" />
-    <h2 class="product-name mt-2 flex-1 font-extrabold">{{ product.name }}</h2>
-    <CoinCounter :amount="product.price" compact class="mt-2" />
-  </NuxtLink>
+  <button type="button" class="artwork-control product-card block min-w-0" :data-product-id="product.id" :aria-label="`Ver confirmación de canje: ${product.name}, ${product.price} coins`" @click="emit('select', product)">
+    <picture class="block"><source media="(min-width: 1024px)" :srcset="`/images/official/desktop/store/${product.id}.webp`" /><img :src="product.image" alt="" aria-hidden="true" width="166" height="227" class="block h-auto w-full object-contain" /></picture>
+    <h2 class="sr-only">{{ product.name }} — {{ product.price }} Pixlor Coins</h2>
+  </button>
 </template>

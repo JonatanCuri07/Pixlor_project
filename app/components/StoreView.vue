@@ -1,21 +1,17 @@
 <script setup lang="ts">
 import { products } from '~/data/products'
-withDefaults(defineProps<{ covered?: boolean }>(), { covered: false })
+import type { Product } from '~/data/products'
+const emit = defineEmits<{ select: [product: Product] }>()
 </script>
 
 <template>
-  <div class="store-screen mx-auto" :inert="covered || undefined" :aria-hidden="covered || undefined">
+  <div class="store-screen mx-auto">
     <AppTopBar />
-    <CharacterHero />
-    <div class="wood-banner relative flex items-center justify-center gap-3">
-      <span class="store-cart grid shrink-0 place-items-center"><AppIcon name="cart" /></span>
-      <h1 class="font-black"><span class="block text-white">TIENDA DE</span><span class="text-yellow-300">RECOMPENSAS</span></h1>
-      <span class="leaf-cluster leaf-top" aria-hidden="true" />
-      <span class="leaf-cluster leaf-bottom" aria-hidden="true" />
-    </div>
-    <div class="store-stripe" aria-hidden="true" />
+    <CharacterHero variant="store" />
+    <h1 class="store-banner mx-auto"><picture><source media="(min-width: 1024px)" srcset="/images/official/desktop/store/banner.webp" /><img src="/images/official/store/banner.webp" alt="Tienda de recompensas" class="block h-auto w-full object-contain" /></picture></h1>
+    <img src="/images/official/store/stripe.webp" alt="" aria-hidden="true" class="store-stripe block h-auto w-full" />
     <section class="product-grid grid grid-cols-2 gap-3" aria-label="Tienda de recompensas">
-      <StoreProductCard v-for="product in products" :key="product.id" :product="product" />
+      <StoreProductCard v-for="product in products" :key="product.id" :product="product" @select="emit('select', $event)" />
     </section>
     <WhatsappHelpBar class="mt-4" />
   </div>

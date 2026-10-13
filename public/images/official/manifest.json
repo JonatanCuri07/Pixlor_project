@@ -1,0 +1,692 @@
+[
+  {
+    "asset": "public/images/official/backgrounds/auth.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      18,
+      20,
+      458,
+      951
+    ],
+    "treatment": "opaque",
+    "width": 440,
+    "height": 931
+  },
+  {
+    "asset": "public/images/official/backgrounds/upload.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      33,
+      78,
+      473,
+      965
+    ],
+    "treatment": "opaque",
+    "width": 440,
+    "height": 887
+  },
+  {
+    "asset": "public/images/official/backgrounds/menu.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      10,
+      10,
+      509,
+      954
+    ],
+    "treatment": "opaque",
+    "width": 499,
+    "height": 944
+  },
+  {
+    "asset": "public/images/official/backgrounds/store.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      10,
+      13,
+      464,
+      964
+    ],
+    "treatment": "opaque",
+    "width": 454,
+    "height": 951
+  },
+  {
+    "asset": "public/images/official/backgrounds/confirm.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      11,
+      10,
+      491,
+      951
+    ],
+    "treatment": "opaque",
+    "width": 480,
+    "height": 941
+  },
+  {
+    "asset": "public/images/official/backgrounds/success.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      17,
+      20,
+      463,
+      942
+    ],
+    "treatment": "opaque",
+    "width": 446,
+    "height": 922
+  },
+  {
+    "asset": "public/images/official/branding/main.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      516,
+      45,
+      992,
+      253
+    ],
+    "treatment": "alpha",
+    "width": 476,
+    "height": 208
+  },
+  {
+    "asset": "public/images/official/branding/upload.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      486,
+      31,
+      1043,
+      268
+    ],
+    "treatment": "alpha",
+    "width": 557,
+    "height": 237
+  },
+  {
+    "asset": "public/images/official/branding/store.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      473,
+      7,
+      963,
+      240
+    ],
+    "treatment": "checker",
+    "width": 490,
+    "height": 233
+  },
+  {
+    "asset": "public/images/official/branding/confirm.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      510,
+      15,
+      973,
+      199
+    ],
+    "treatment": "checker",
+    "width": 463,
+    "height": 184
+  },
+  {
+    "asset": "public/images/official/branding/success.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      487,
+      29,
+      994,
+      221
+    ],
+    "treatment": "alpha",
+    "width": 507,
+    "height": 192
+  },
+  {
+    "asset": "public/images/official/characters/auth.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      478,
+      24,
+      1075,
+      354
+    ],
+    "treatment": "checker",
+    "width": 597,
+    "height": 330
+  },
+  {
+    "asset": "public/images/official/characters/upload.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      474,
+      273,
+      1136,
+      508
+    ],
+    "treatment": "alpha",
+    "width": 662,
+    "height": 235
+  },
+  {
+    "asset": "public/images/official/characters/menu.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      979,
+      8,
+      1536,
+      318
+    ],
+    "treatment": "alpha",
+    "width": 557,
+    "height": 310
+  },
+  {
+    "asset": "public/images/official/characters/store.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      948,
+      18,
+      1525,
+      247
+    ],
+    "treatment": "checker",
+    "width": 577,
+    "height": 229
+  },
+  {
+    "asset": "public/images/official/characters/confirm.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      910,
+      48,
+      1528,
+      284
+    ],
+    "treatment": "checker",
+    "width": 618,
+    "height": 236
+  },
+  {
+    "asset": "public/images/official/characters/success.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      961,
+      40,
+      1535,
+      305
+    ],
+    "treatment": "alpha",
+    "width": 574,
+    "height": 265
+  },
+  {
+    "asset": "public/images/official/auth/panel.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      482,
+      426,
+      1058,
+      896
+    ],
+    "treatment": "checker",
+    "width": 576,
+    "height": 470
+  },
+  {
+    "asset": "public/images/official/auth/email.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      1096,
+      108,
+      1509,
+      193
+    ],
+    "treatment": "checker",
+    "width": 413,
+    "height": 85
+  },
+  {
+    "asset": "public/images/official/auth/password.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      1096,
+      210,
+      1509,
+      297
+    ],
+    "treatment": "checker",
+    "width": 413,
+    "height": 87
+  },
+  {
+    "asset": "public/images/official/auth/login.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      1083,
+      475,
+      1527,
+      584
+    ],
+    "treatment": "checker",
+    "width": 444,
+    "height": 109
+  },
+  {
+    "asset": "public/images/official/auth/google.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      1098,
+      706,
+      1509,
+      790
+    ],
+    "treatment": "checker",
+    "width": 411,
+    "height": 84
+  },
+  {
+    "asset": "public/images/official/auth/facebook.webp",
+    "source": "design-preference/pixlor-assets/1 vertical/Kit de interfaz fantástica en PNG.png",
+    "crop": [
+      1098,
+      792,
+      1509,
+      879
+    ],
+    "treatment": "checker",
+    "width": 411,
+    "height": 87
+  },
+  {
+    "asset": "public/images/official/menu/panel.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      514,
+      327,
+      1025,
+      895
+    ],
+    "treatment": "alpha",
+    "width": 511,
+    "height": 568
+  },
+  {
+    "asset": "public/images/official/menu/profile.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      1042,
+      383,
+      1524,
+      501
+    ],
+    "treatment": "alpha",
+    "width": 482,
+    "height": 118
+  },
+  {
+    "asset": "public/images/official/menu/store.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      1044,
+      573,
+      1525,
+      688
+    ],
+    "treatment": "alpha",
+    "width": 481,
+    "height": 115
+  },
+  {
+    "asset": "public/images/official/menu/logout.webp",
+    "source": "design-preference/pixlor-assets/3 vertical/Hoja de recursos Pixlor para menú de juego.png",
+    "crop": [
+      1044,
+      763,
+      1525,
+      887
+    ],
+    "treatment": "alpha",
+    "width": 481,
+    "height": 124
+  },
+  {
+    "asset": "public/images/official/upload/title.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      1044,
+      82,
+      1529,
+      294
+    ],
+    "treatment": "alpha",
+    "width": 485,
+    "height": 212
+  },
+  {
+    "asset": "public/images/official/upload/counter.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      1218,
+      381,
+      1466,
+      483
+    ],
+    "treatment": "alpha",
+    "width": 248,
+    "height": 102
+  },
+  {
+    "asset": "public/images/official/upload/panel.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      486,
+      511,
+      1080,
+      862
+    ],
+    "treatment": "alpha",
+    "width": 594,
+    "height": 351
+  },
+  {
+    "asset": "public/images/official/upload/options.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      1078,
+      578,
+      1528,
+      762
+    ],
+    "treatment": "alpha",
+    "width": 450,
+    "height": 184
+  },
+  {
+    "asset": "public/images/official/upload/submit.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      506,
+      865,
+      1072,
+      974
+    ],
+    "treatment": "alpha",
+    "width": 566,
+    "height": 109
+  },
+  {
+    "asset": "public/images/official/upload/note.webp",
+    "source": "design-preference/pixlor-assets/2 vertical/Kit de interfaz Pixlor para subir creaciones.png",
+    "crop": [
+      1096,
+      880,
+      1511,
+      946
+    ],
+    "treatment": "alpha",
+    "width": 415,
+    "height": 66
+  },
+  {
+    "asset": "public/images/official/store/banner.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      477,
+      254,
+      1070,
+      448
+    ],
+    "treatment": "checker",
+    "width": 593,
+    "height": 194
+  },
+  {
+    "asset": "public/images/official/store/counter.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      1085,
+      317,
+      1314,
+      416
+    ],
+    "treatment": "checker",
+    "width": 229,
+    "height": 99
+  },
+  {
+    "asset": "public/images/official/navigation/back.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      1377,
+      314,
+      1480,
+      416
+    ],
+    "treatment": "checker",
+    "width": 103,
+    "height": 102
+  },
+  {
+    "asset": "public/images/official/store/stripe.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      488,
+      475,
+      1281,
+      534
+    ],
+    "treatment": "checker",
+    "width": 793,
+    "height": 59
+  },
+  {
+    "asset": "public/images/official/store/pen.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      479,
+      576,
+      645,
+      803
+    ],
+    "treatment": "card",
+    "width": 166,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/notebook.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      652,
+      576,
+      818,
+      803
+    ],
+    "treatment": "card",
+    "width": 166,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/keychain.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      826,
+      576,
+      993,
+      803
+    ],
+    "treatment": "card",
+    "width": 167,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/stickers.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      1001,
+      576,
+      1167,
+      803
+    ],
+    "treatment": "card",
+    "width": 166,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/cap.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      1175,
+      576,
+      1342,
+      803
+    ],
+    "treatment": "card",
+    "width": 167,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/shirt.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      1351,
+      576,
+      1520,
+      803
+    ],
+    "treatment": "card",
+    "width": 169,
+    "height": 227
+  },
+  {
+    "asset": "public/images/official/store/help.webp",
+    "source": "design-preference/pixlor-assets/4 vertical/Hoja de recursos UI de tienda Pixlor.png",
+    "crop": [
+      520,
+      857,
+      1176,
+      959
+    ],
+    "treatment": "checker",
+    "width": 656,
+    "height": 102
+  },
+  {
+    "asset": "public/images/official/confirm/banner.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      564,
+      267,
+      1174,
+      464
+    ],
+    "treatment": "checker",
+    "width": 610,
+    "height": 197
+  },
+  {
+    "asset": "public/images/official/confirm/panel.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      569,
+      480,
+      1278,
+      779
+    ],
+    "treatment": "checker",
+    "width": 709,
+    "height": 299
+  },
+  {
+    "asset": "public/images/official/confirm/accept.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      585,
+      827,
+      964,
+      955
+    ],
+    "treatment": "checker",
+    "width": 379,
+    "height": 128
+  },
+  {
+    "asset": "public/images/official/confirm/cancel.webp",
+    "source": "design-preference/pixlor-assets/5 vertical/Hoja de recursos UI de fantasía colorida.png",
+    "crop": [
+      1013,
+      826,
+      1408,
+      955
+    ],
+    "treatment": "checker",
+    "width": 395,
+    "height": 129
+  },
+  {
+    "asset": "public/images/official/success/banner.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      484,
+      296,
+      1086,
+      474
+    ],
+    "treatment": "alpha",
+    "width": 602,
+    "height": 178
+  },
+  {
+    "asset": "public/images/official/success/panel.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      483,
+      525,
+      1120,
+      940
+    ],
+    "treatment": "alpha",
+    "width": 637,
+    "height": 415
+  },
+  {
+    "asset": "public/images/official/success/whatsapp.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      1127,
+      576,
+      1513,
+      698
+    ],
+    "treatment": "alpha",
+    "width": 386,
+    "height": 122
+  },
+  {
+    "asset": "public/images/official/success/return.webp",
+    "source": "design-preference/pixlor-assets/6 vertical/Hoja de recursos UI de Pixlor.png",
+    "crop": [
+      1131,
+      777,
+      1522,
+      860
+    ],
+    "treatment": "alpha",
+    "width": 391,
+    "height": 83
+  },
+  {
+    "asset": "public/images/official/navigation/menu.png",
+    "source": "design-preference/pixlor-assets/menu mobile.png",
+    "treatment": "original-alpha",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "asset": "public/images/official/auth/register.webp",
+    "source": "public/images/official/auth/login.webp",
+    "treatment": "label-removed",
+    "width": 444,
+    "height": 109
+  }
+]

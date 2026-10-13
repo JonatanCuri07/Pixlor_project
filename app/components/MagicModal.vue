@@ -1,15 +1,17 @@
 <script setup lang="ts">
-defineProps<{ titleId: string }>()
-const dialog = ref<HTMLDialogElement>()
-onMounted(() => dialog.value?.showModal())
-const close = () => navigateTo('/store')
+defineProps<{ open: boolean; titleId: string; variant: 'confirm' | 'success' }>()
+const emit = defineEmits<{ close: [] }>()
 </script>
 
 <template>
-  <dialog ref="dialog" class="magic-dialog" :aria-labelledby="titleId" @cancel.prevent="close">
-    <MagicPanel class="modal-panel">
-      <span class="modal-star grid place-items-center" aria-hidden="true"><AppIcon name="star" /></span>
+  <BrowserModal :open="open" :title-id="titleId" class="magic-dialog" @close="emit('close')">
+    <NavigationMenuButton class="modal-navigation" />
+    <div :class="['modal-panel', `modal-${variant}`]">
+      <div class="modal-artwork relative">
+        <picture class="modal-panel-image block"><source media="(min-width: 1024px)" :srcset="`/images/official/desktop/${variant}/panel.webp`" /><img :src="`/images/official/${variant}/panel.webp`" alt="" aria-hidden="true" class="block h-auto w-full object-contain" /></picture>
+        <slot name="artwork" />
+      </div>
       <slot />
-    </MagicPanel>
-  </dialog>
+    </div>
+  </BrowserModal>
 </template>
