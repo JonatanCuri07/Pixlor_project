@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { isAuthError, isAuthSessionMissingError } from '@supabase/supabase-js'
 
-const props = withDefaults(defineProps<{ register?: boolean }>(), { register: false })
-const supabase = props.register ? useSupabase() : null
+withDefaults(defineProps<{ register?: boolean }>(), { register: false })
+const supabase = useSupabase()
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
@@ -29,12 +29,64 @@ function getRegistrationError(error: unknown) {
   return 'No pudimos crear tu cuenta. Inténtalo nuevamente.'
 }
 
-async function handleSubmit() {
-  if (isLoading.value) return
-  if (!props.register || !supabase) {
-    await navigateTo('/upload')
-    return
+function getLoginError(error: unknown) {
+  if (isAuthError(error)) {
+    if (error.code === 'invalid_credentials' || error.message.toLowerCase().includes('invalid login credentials')) {
+      return 'Correo o contraseña incorrectos.'
+    }
+    if (error.status === 429 || ['over_request_rate_limit', 'over_email_send_rate_limit'].includes(error.code ?? '')) {
+      return 'Se realizaron demasiados intentos. Inténtalo nuevamente en unos minutos.'
+    }
   }
+
+  return 'No pudimos iniciar sesión. Inténtalo nuevamente.'
+}
+
+async function handleLogin() {
+  if (isLoading.value) return
+
+  errorMessage.value = ''
+  const normalizedEmail = email.value.trim()
+
+  if (!normalizedEmail || !password.value) {
+    errorMessage.value = 'Completa tu correo y contraseña.'
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+    errorMessage.value = 'Ingresa un correo electrónico válido.'
+  }
+
+  if (errorMessage.value) return
+
+  isLoading.value = true
+
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: normalizedEmail,
+      password: password.value,
+    })
+
+    if (error) {
+      errorMessage.value = getLoginError(error)
+      if (import.meta.dev) console.error('Supabase signInWithPassword:', error.code, error.status)
+      return
+    }
+
+    if (!data.session) {
+      errorMessage.value = 'No pudimos iniciar sesión. Inténtalo nuevamente.'
+      return
+    }
+
+    password.value = ''
+    await navigateTo('/upload')
+  } catch (error) {
+    errorMessage.value = getLoginError(error)
+    if (import.meta.dev) console.error('Supabase login:', isAuthError(error) ? error.code : 'unexpected_error')
+  } finally {
+    isLoading.value = false
+  }
+}
+
+async function handleRegister() {
+  if (isLoading.value) return
 
   errorMessage.value = ''
   const normalizedEmail = email.value.trim()
@@ -95,7 +147,7 @@ async function handleSubmit() {
     <CharacterHero />
     <MagicPanel>
       <h1 :class="register ? 'mb-4 text-center text-2xl font-black' : 'sr-only'">{{ register ? 'Crea tu cuenta' : 'Iniciar sesión en Pixlor' }}</h1>
-      <form class="flex flex-col gap-3" novalidate :aria-busy="isLoading" @submit.prevent="handleSubmit">
+      <form class="flex flex-col gap-3" novalidate :aria-busy="isLoading" @submit.prevent="register ? handleRegister() : handleLogin()">
         <FormField v-model="email" name="email" label="Correo electrónico" autocomplete="email" />
         <FormField v-model="password" name="password" label="Contraseña" type="password" :autocomplete="register ? 'new-password' : 'current-password'" />
         <FormField v-if="register" v-model="confirmPassword" name="repeat-password" label="Repetir contraseña" type="password" autocomplete="new-password" />
@@ -105,7 +157,8 @@ async function handleSubmit() {
         </label>
         <p v-else class="signup-prompt text-center">¿No tienes una cuenta? <NuxtLink to="/register" class="font-black text-violet-700">Regístrate aquí</NuxtLink></p>
         <p v-if="errorMessage" role="alert" class="signup-prompt text-center font-bold text-red-700">{{ errorMessage }}</p>
-        <ArtworkButton :asset="register ? 'auth/register' : 'auth/login'" :desktop-asset="register ? 'auth/register' : 'auth/login'" :label="register ? (isLoading ? 'Registrando...' : 'REGISTRARME') : 'INICIAR SESIÓN'" :text="register" type="submit" :disabled="isLoading" />
+        <p v-if="isLoading && !register" role="status" class="signup-prompt text-center font-bold">Iniciando sesión...</p>
+        <ArtworkButton :asset="register ? 'auth/register' : 'auth/login'" :desktop-asset="register ? 'auth/register' : 'auth/login'" :label="register ? (isLoading ? 'Registrando...' : 'REGISTRARME') : (isLoading ? 'Iniciando sesión...' : 'INICIAR SESIÓN')" :text="register" type="submit" :disabled="isLoading" />
         <p v-if="register" class="signup-prompt text-center">¿Ya tienes una cuenta? <NuxtLink to="/" class="font-black text-violet-700">Inicia sesión</NuxtLink></p>
       </form>
     </MagicPanel>
